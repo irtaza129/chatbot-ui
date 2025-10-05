@@ -1,10 +1,10 @@
-import Homescreen from './views/Homescreen/Homescreen'
-import './App.css'
+import React from "react";
+import Chat from "./components/Chat";
 
 function App() {
   return (
     <div className="App">
-      <Homescreen />
+      <Chat />
     </div>
   );
 }
