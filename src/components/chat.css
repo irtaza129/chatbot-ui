@@ -1,0 +1,197 @@
+/* Background gradient similar to repo aesthetic */
+.chat-wrapper {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f8fafc;
+  font-family: "Inter", sans-serif;
+  padding: 40px;
+}
+
+/* Main chat container */
+.chat-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+  max-width: 750px;
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Title */
+.chat-title {
+  text-align: center;
+  color: #e2e8f0;
+  margin-bottom: 18px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Chat window area */
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 15px;
+  scrollbar-width: thin;
+  scrollbar-color: #64748b transparent;
+}
+
+.chat-window::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+  background-color: #64748b;
+  border-radius: 6px;
+}
+
+/* Message styling */
+.message {
+  margin-bottom: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.message.user {
+  background: #3b82f6;
+  color: white;
+  align-self: flex-end;
+  text-align: right;
+  max-width: 85%;
+  margin-left: auto;
+}
+
+.message.bot {
+  background: rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  align-self: flex-start;
+  max-width: 85%;
+}
+
+/* Placeholder questions */
+.placeholder-questions {
+  text-align: center;
+  color: #cbd5e1;
+}
+
+.placeholder-questions button {
+  display: block;
+  margin: 8px auto;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.placeholder-questions button:hover {
+  background: #2563eb;
+}
+
+/* Chat input area */
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #f8fafc;
+  font-size: 1rem;
+  outline: none;
+}
+
+.chat-input input::placeholder {
+  color: #cbd5e1;
+}
+
+.chat-input button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.chat-input button:hover {
+  background: #2563eb;
+}
+
+/* Typing animation (loading state) */
+.typing-dots {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.typing-dots span {
+  width: 8px;
+  height: 8px;
+  background-color: #94a3b8;
+  border-radius: 50%;
+  animation: blink 1.4s infinite both;
+}
+
+.typing-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+}
+
+/* About Developer */
+.about-dev {
+  text-align: center;
+  margin-top: 12px;
+  color: #60a5fa;
+  cursor: pointer;
+  position: relative;
+}
+
+.about-popup {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.9);
+  color: #f8fafc;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  max-width: 400px;
+  z-index: 10;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
